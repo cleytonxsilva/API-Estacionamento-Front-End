@@ -6,4 +6,9 @@ export class Condutor extends AbstractEntity{
     telefone! : String
     tempoPago! : number
     tempoDesconto! : number
+
+    constructor() {
+        super()
+        this.ativo = true
+    }
 }

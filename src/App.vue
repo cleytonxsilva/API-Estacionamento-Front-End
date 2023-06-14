@@ -7,6 +7,14 @@
 </template>
 
 <style lang="scss">
+
+// Import Bootstrap
+$primary: #900;
+$enable-shadows: true;
+$prefix: "mo-";
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
