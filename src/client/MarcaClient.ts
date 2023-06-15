@@ -7,14 +7,14 @@ export class MarcaClient {
 
     constructor() {
         this.axiosClient = axios.create({
-            baseURL: 'http://localhost:8080/api/estacionamento',
+            baseURL: 'http://localhost:8080/api/marca',
             headers: {'Content-type' : 'application/json'}
         });
     }
 
     public async findById(id: number) : Promise<Marca> {
         try {
-            return (await this.axiosClient.get<Marca>(`/${id}`)).data
+            return (await this.axiosClient.get<Marca>(`?id=${id}`)).data
         } catch (error:any) {
             return Promise.reject(error.response)
         }
@@ -46,7 +46,7 @@ export class MarcaClient {
 
     public async excluir(id: number) : Promise<void> {
         try {
-            return (await this.axiosClient.delete(`/${id}`)).data
+            return (await this.axiosClient.delete(`?id=${id}`)).data
         } catch (error:any) {
             return Promise.reject(error.response)
         }

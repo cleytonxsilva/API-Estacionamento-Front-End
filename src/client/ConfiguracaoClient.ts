@@ -1,5 +1,5 @@
-import { Configuracao } from "@/model/Configuracao";
 import axios, { AxiosInstance } from "axios";
+import { Configuracao } from "@/model/Configuracao";
 
 export class ConfiguracaoClient{
 
@@ -7,14 +7,14 @@ export class ConfiguracaoClient{
 
     constructor() {
         this.axiosClient = axios.create({
-            baseURL: 'http://localhost:8080/api/estacionamento',
+            baseURL: 'http://localhost:8080/api/configuracao',
             headers: {'Content-type' : 'application/json'}
         });
     }
 
     public async findById(id: number) : Promise<Configuracao> {
         try {
-            return (await this.axiosClient.get<Configuracao>(`/${id}`)).data
+            return (await this.axiosClient.get<Configuracao>(`?id=${id}`)).data
         } catch (error:any) {
             return Promise.reject(error.response)
         }

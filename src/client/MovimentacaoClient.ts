@@ -1,44 +1,43 @@
 import axios, { AxiosInstance } from "axios";
-import { Condutor } from "@/model/Condutor";
+import { Movimentacao } from "@/model/Movimentacao";
 
-export class CondutorClient {
-
-    private axiosClient: AxiosInstance;
+export class MovimentacaoClient{
+private axiosClient: AxiosInstance;
 
     constructor() {
         this.axiosClient = axios.create({
-            baseURL: 'http://localhost:8080/api/condutor',
+            baseURL: 'http://localhost:8080/api/movimentacao',
             headers: {'Content-type' : 'application/json'}
         });
     }
 
-    public async findById(id: number) : Promise<Condutor> {
+    public async findById(id: number) : Promise<Movimentacao> {
         try {
-            return (await this.axiosClient.get<Condutor>(`?id=${id}`)).data
+            return (await this.axiosClient.get<Movimentacao>(`?id=${id}`)).data
         } catch (error:any) {
             return Promise.reject(error.response)
         }
     }
 
-    public async listaCompleta(condutor: Condutor[]) : Promise<Condutor[]>{
+    public async listaCompleta(movimentacao: Movimentacao[]) : Promise<Movimentacao[]>{
         try {
-            return (await this.axiosClient.get<Condutor[]>(`/lista`)).data
+            return (await this.axiosClient.get<Movimentacao[]>(`/lista`)).data
         } catch (error:any) {
             return Promise.reject(error.response)
         }
     }
 
-	public async cadastrar(condutor: Condutor): Promise<void> {
+	public async cadastrar(movimentacao: Movimentacao): Promise<void> {
 		try {
-			return (await this.axiosClient.post('/', condutor))
+			return (await this.axiosClient.post('/', movimentacao))
 		} catch (error:any) {
 			return Promise.reject(error.response)
 		}
 	}
 
-	public async editar(condutor: Condutor): Promise<void> {
+	public async editar(movimentacao: Movimentacao): Promise<void> {
 		try {
-			return (await this.axiosClient.put(`/${condutor.id}`, condutor)).data
+			return (await this.axiosClient.put(`/${movimentacao.id}`, movimentacao)).data
 		} catch (error:any) {
 			return Promise.reject(error.response)
 		}
@@ -52,4 +51,3 @@ export class CondutorClient {
         }
     }
 }
-
