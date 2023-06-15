@@ -1,4 +1,4 @@
-import { AbstractEntity } from "./abstract-entity";
+import { AbstractEntity } from "./AbstractEntity";
 
 export class Configuracao extends AbstractEntity{
     valorHora! : number

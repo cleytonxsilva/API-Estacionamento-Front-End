@@ -1,5 +1,5 @@
-import { AbstractEntity } from "./abstract-entity";
-import { Marca } from "./marca";
+import { AbstractEntity } from "./AbstractEntity";
+import { Marca } from "./Marca";
 
 export class Modelo extends AbstractEntity{
     modelo! : String
