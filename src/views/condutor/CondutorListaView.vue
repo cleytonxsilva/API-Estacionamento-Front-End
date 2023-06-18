@@ -1,6 +1,6 @@
 <template>
-    <div class="marca-lista"></div>
-    <h1>Marcas</h1>
+    <div class="condutor-lista"></div>
+    <h1>Condutor</h1>
 </template>
 <script lang="ts">
 </script>
