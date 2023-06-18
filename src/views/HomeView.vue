@@ -1,6 +1,5 @@
 <template>
-  <div class="home">
-
+  <div class="row">
     <h1>Estacionamento</h1>
   </div>
 </template>

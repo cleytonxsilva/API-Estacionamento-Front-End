@@ -36,8 +36,9 @@ export default defineComponent({
 body{
   background-color: #1E1E1E;
   //#1E1E1E
+  
 }
-h1{
+h1, h2, h3, p{
   color: #FFFFFF;
 }
 </style>

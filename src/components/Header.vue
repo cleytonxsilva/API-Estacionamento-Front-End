@@ -1,11 +1,11 @@
 <template>
   <header>
     <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-4">
-          <a href="/"><img src="../assets/logo.png.png" alt="logo.png" class="navbar-brand" id="logo"></a>
+      <div class="row align-items-center justify-content-center flex-sm-wrap">
+        <div class="col-sm-4 col-lg-auto align-self-center">
+          <router-link to="/"><img src="../assets/logo.png.png" alt="logo.png" class="col-sm-6 float-start" id="logo" width="100"></router-link>
         </div>
-        <div class="col-8 justify-content-center">
+        <div class="col-sm-8 col-lg-auto justify-content-center">
           <nav class="navbar">
             <div class="navbar-nav">
               <router-link to="/">Home</router-link>
@@ -32,25 +32,27 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
+header{
+  border-bottom: 1px solid #ffffff4f;
+}
 .container {
   margin: 0;
-  padding: 0;
+  padding: 15px;
   box-sizing: border-box;
 
 }
 nav {
-  
+
   a {
     font-weight: bold;
     text-decoration: none;
-    color: rgb(155, 155, 155);
+    color: #B3B3B3;
 
     &.router-link-exact-active {
       color: #FFFFFF;
     }
   }
 }
-
 
 .navbar-nav {
   
