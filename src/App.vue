@@ -1,19 +1,28 @@
+
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <Header />
+  <router-view />
 </template>
+<script lang="ts">
+
+import  Header from '@/components/Header.vue';
+import { defineComponent } from 'vue';
+export default defineComponent({
+  name: 'App',
+  components: {
+    Header
+  },
+});
+</script>
 
 <style lang="scss">
-
-// Import Bootstrap
-$primary: #900;
-$enable-shadows: true;
-$prefix: "mo-";
-
-@import "../node_modules/bootstrap/scss/bootstrap";
+  
+  // Import Bootstrap
+  $primary: #900;
+  $enable-shadows: true;
+  $prefix: "mo-";
+  
+  @import "../node_modules/bootstrap/scss/bootstrap";
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

@@ -8,18 +8,42 @@ const routes: Array<RouteRecordRaw> = [
     component: HomeView
   },
   {
-    path: '/about',
-    name: 'about',
+    path: '/condutor-lista',
+    name: 'condutor-lista',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/condutor/CondutorListaView.vue')
+  },
+  {
+    path: '/marca-lista',
+    name: 'marca-lista',
+    component: () => import(/* webpackChunkName: "about" */ '../views/marca/MarcaListaView.vue')
+  },
+  {
+    path: '/modelo-lista',
+    name: 'modelo-lista',
+    component: () => import(/* webpackChunkName: "about" */ '../views/modelo/ModeloListaView.vue')
+  },{
+    path: '/veiculo-lista',
+    name: 'veiculo-lista',
+    component: () => import(/* webpackChunkName: "about" */ '../views/veiculo/VeiculoListaView.vue')
+  },
+  {
+    path: '/movimentacao-lista',
+    name: 'movimentacao-lista',
+    component: () => import(/* webpackChunkName: "about" */ '../views/movimentacao/MovimentacaoListaView.vue')
+  },
+  {
+    path: '/configuracao',
+    name: 'configuracao',
+    component: () => import(/* webpackChunkName: "about" */ '../views/configuracao/ConfiguracaoView.vue')
   }
 ]
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
-})//XD
+})
 
 export default router
