@@ -1,20 +1,21 @@
 <template>
   <header>
-    <div class="container">
-      <div class="row align-items-center justify-content-center flex-sm-wrap">
-        <div class="col-sm-4 col-lg-auto align-self-center">
-          <router-link to="/"><img src="../assets/logo.png.png" alt="logo.png" class="col-sm-6 float-start" id="logo" width="100"></router-link>
+    <div class="container-md">
+      <div class="row align-items-center justify-content-around flex-sm-wrap">
+        <div class="col-sm-4 col-lg-2 align-self-center">
+          <router-link to="/"><img src="../assets/logo.png.png" alt="logo.png" class="col-sm-6 float-start" id="logo"
+              width="100"></router-link>
         </div>
-        <div class="col-sm-8 col-lg-auto justify-content-center">
+        <div class="col-sm-8 col-md-10 justify-content-center">
           <nav class="navbar">
-            <div class="navbar-nav">
-              <router-link to="/">Home</router-link>
-              <router-link to="/condutor-lista">Condutor</router-link>
-              <router-link to="/marca-lista">Marca</router-link>
-              <router-link to="/modelo-lista">Modelo</router-link>
-              <router-link to="/veiculo-lista">Veículo</router-link>
-              <router-link to="/movimentacao-lista">Movimentação</router-link>
-              <router-link to="/configuracao">Configuração</router-link>
+            <div class="row navbar-nav">
+              <router-link class="col-1" to="/">Home</router-link>
+              <router-link class="col-auto" to="/condutor-lista">Condutor</router-link>
+              <router-link class="col-auto" to="/marca-lista">Marca</router-link>
+              <router-link class="col-auto" to="/modelo-lista">Modelo</router-link>
+              <router-link class="col-auto" to="/veiculo-lista">Veículo</router-link>
+              <router-link class="col-auto" to="/movimentacao-lista">Movimentação</router-link>
+              <router-link class="col-auto" to="/configuracao">Configuração</router-link>
             </div>
           </nav>
         </div>
@@ -32,15 +33,17 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-header{
-  border-bottom: 1px solid #ffffff4f;
-}
-.container {
-  margin: 0;
-  padding: 15px;
+* {
+
+  padding: 5px;
   box-sizing: border-box;
 
 }
+
+header {
+  border-bottom: 1px solid #ffffff4f;
+}
+
 nav {
 
   a {
@@ -55,11 +58,11 @@ nav {
 }
 
 .navbar-nav {
-  
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 25px;
+  gap: 5px;
 }
 </style>
