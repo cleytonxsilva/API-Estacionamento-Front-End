@@ -9,7 +9,7 @@
         <div class="col-sm-8 col-md-10 justify-content-center">
           <nav class="navbar">
             <div class="row navbar-nav">
-              <router-link class="col-1" to="/">Home</router-link>
+              <router-link class="col-auto" to="/">Home</router-link>
               <router-link class="col-auto" to="/condutor-lista">Condutor</router-link>
               <router-link class="col-auto" to="/marca-lista">Marca</router-link>
               <router-link class="col-auto" to="/modelo-lista">Modelo</router-link>
@@ -61,8 +61,7 @@ nav {
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: 5px;
+  justify-content: space-around;
+  
 }
 </style>
