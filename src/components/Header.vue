@@ -3,8 +3,7 @@
     <div class="container-md">
       <div class="row align-items-center justify-content-around flex-sm-wrap">
         <div class="col-sm-4 col-lg-2 align-self-center">
-          <router-link to="/"><img src="../assets/logo.png.png" alt="logo.png" class="col-sm-6 float-start" id="logo"
-              width="100"></router-link>
+          <router-link to="/"><img src="../assets/logo.png.png" alt="logo.png" class="col-sm-6 img-tumbnail" id="logo"></router-link>
         </div>
         <div class="col-sm-8 col-md-10 justify-content-center">
           <nav class="navbar">
