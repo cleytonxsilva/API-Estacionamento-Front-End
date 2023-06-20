@@ -13,7 +13,12 @@ const routes: Array<RouteRecordRaw> = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/condutor/CondutorListaView.vue')
+    component: () => import('../views/condutor/CondutorListaView.vue')
+  },
+  {
+    path: '/condutor-form',
+    name: 'condutor-form',
+    component: () => import( '../views/condutor/CondutorForm.vue')
   },
   {
     path: '/marca-lista',

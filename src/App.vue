@@ -38,7 +38,7 @@ body{
   //#1E1E1E
   
 }
-h1, h2, h3, p{
+h1, h2, h3, p, label{
   color: #FFFFFF;
 }
 </style>

@@ -1,8 +1,10 @@
 <template>
     <div class="condutor-lista"></div>
-    <div class="col">
+    <div class="">
         <div>
-            <button class="btn btn-secondary" type="button" @click="">Cadastrar</button>
+            <router-link to="/condutor-form">
+                <button class="btn btn-secondary" type="button" @click="cadastrarCondutor">Cadastrar novo Condutor</button>
+            </router-link>
         </div>
         <div>
             <table class="table table-responsive table-dark table-hover table-bordered">
@@ -31,6 +33,8 @@
     </div>
 </template>
 <script lang="ts">
+import CondutorForm from './CondutorForm.vue';
+
 export default {
     data() {
         return {
@@ -40,6 +44,14 @@ export default {
                 { id: 3, nome: 'Paulo', cpf: '345.567.890-11', telefone: '(34) 9101-1213', tempoPago: '100:00', tempoDesconto: '02:00' }
             ]
         };
+    },
+    components: {
+        CondutorForm,
+    },
+    methods: {
+        cadastrarCondutor() {
+            console.log("ok");
+        }
     }
 }
 </script>
