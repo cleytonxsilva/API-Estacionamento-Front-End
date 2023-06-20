@@ -16,6 +16,7 @@
                         <th scope="col">Telefone</th>
                         <th scope="col">Tempo pago</th>
                         <th scope="col">Desconto acumulado</th>
+                        <th scope="col">Opções</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -26,6 +27,11 @@
                         <td>{{ item.telefone }}</td>
                         <td>{{ item.tempoPago }}</td>
                         <td>{{ item.tempoDesconto }}</td>
+                        <td>
+                            <button class="btn btn-outline-success">Mostrar Mais</button>
+                            <button class="btn btn-outline-warning">Editar</button>
+                            <button class="btn btn-outline-danger">Excluir</button>
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -40,8 +46,15 @@ export default {
         return {
             items: [
                 { id: 1, nome: 'Pedro', cpf: '123.456.789-00', telefone: '(12) 1234-5678', tempoPago: '10:00', tempoDesconto: '00:00' },
-                { id: 2, nome: 'Padre', cpf: '234.567.890-01', telefone: '(23) 5678-9011', tempoPago: '50:00', tempoDesconto: '01:00' },
-                { id: 3, nome: 'Paulo', cpf: '345.567.890-11', telefone: '(34) 9101-1213', tempoPago: '100:00', tempoDesconto: '02:00' }
+                { id: 2, nome: 'Jorge', cpf: '234.567.890-01', telefone: '(23) 5678-9011', tempoPago: '50:00', tempoDesconto: '01:00' },
+                { id: 3, nome: 'Padre', cpf: '234.567.890-01', telefone: '(23) 5678-9011', tempoPago: '50:00', tempoDesconto: '01:00' },
+                { id: 4, nome: 'João', cpf: '234.567.890-01', telefone: '(23) 5678-9011', tempoPago: '50:00', tempoDesconto: '01:00' },
+                { id: 5, nome: 'Cleyton', cpf: '234.567.890-01', telefone: '(23) 5678-9011', tempoPago: '50:00', tempoDesconto: '01:00' },
+                { id: 6, nome: 'Luis', cpf: '234.567.890-01', telefone: '(23) 5678-9011', tempoPago: '50:00', tempoDesconto: '01:00' },
+                { id: 7, nome: 'André', cpf: '234.567.890-01', telefone: '(23) 5678-9011', tempoPago: '50:00', tempoDesconto: '01:00' },
+                { id: 8, nome: 'Frederico', cpf: '234.567.890-01', telefone: '(23) 5678-9011', tempoPago: '50:00', tempoDesconto: '01:00' },
+                { id: 9, nome: 'Zé', cpf: '234.567.890-01', telefone: '(23) 5678-9011', tempoPago: '50:00', tempoDesconto: '01:00' },
+                { id: 10, nome: 'Andrei', cpf: '345.567.890-11', telefone: '(34) 9101-1213', tempoPago: '100:00', tempoDesconto: '02:00' }
             ]
         };
     },
