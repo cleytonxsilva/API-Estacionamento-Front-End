@@ -1,11 +1,15 @@
 <template>
     <div class="condutor-lista"></div>
-    <div class="">
-        <div>
+    <div class="row">
+        <div class="col-10 text-start">
+            <h2>Condutores</h2>
+        </div>
+        <div class="col-2">
             <router-link to="/condutor-form">
-                <button class="btn btn-secondary" type="button" @click="cadastrarCondutor">Cadastrar novo Condutor</button>
+                <button class="btn btn-success" type="button" @click="cadastrarCondutor">Cadastrar Condutor</button>
             </router-link>
         </div>
+    </div>
         <div>
             <table class="table table-responsive table-dark table-hover table-bordered">
                 <thead class="table-active">
@@ -36,7 +40,6 @@
                 </tbody>
             </table>
         </div>
-    </div>
 </template>
 <script lang="ts">
 import CondutorForm from './CondutorForm.vue';
@@ -49,12 +52,7 @@ export default {
                 { id: 2, nome: 'Jorge', cpf: '234.567.890-01', telefone: '(23) 5678-9011', tempoPago: '50:00', tempoDesconto: '01:00' },
                 { id: 3, nome: 'Padre', cpf: '234.567.890-01', telefone: '(23) 5678-9011', tempoPago: '50:00', tempoDesconto: '01:00' },
                 { id: 4, nome: 'João', cpf: '234.567.890-01', telefone: '(23) 5678-9011', tempoPago: '50:00', tempoDesconto: '01:00' },
-                { id: 5, nome: 'Cleyton', cpf: '234.567.890-01', telefone: '(23) 5678-9011', tempoPago: '50:00', tempoDesconto: '01:00' },
-                { id: 6, nome: 'Luis', cpf: '234.567.890-01', telefone: '(23) 5678-9011', tempoPago: '50:00', tempoDesconto: '01:00' },
-                { id: 7, nome: 'André', cpf: '234.567.890-01', telefone: '(23) 5678-9011', tempoPago: '50:00', tempoDesconto: '01:00' },
-                { id: 8, nome: 'Frederico', cpf: '234.567.890-01', telefone: '(23) 5678-9011', tempoPago: '50:00', tempoDesconto: '01:00' },
-                { id: 9, nome: 'Zé', cpf: '234.567.890-01', telefone: '(23) 5678-9011', tempoPago: '50:00', tempoDesconto: '01:00' },
-                { id: 10, nome: 'Andrei', cpf: '345.567.890-11', telefone: '(34) 9101-1213', tempoPago: '100:00', tempoDesconto: '02:00' }
+                { id: 5, nome: 'Cleyton', cpf: '234.567.890-01', telefone: '(23) 5678-9011', tempoPago: '50:00', tempoDesconto: '01:00' }
             ]
         };
     },
@@ -68,9 +66,6 @@ export default {
     }
 }
 </script>
-<style>
-main {
-    display: flex;
-    flex-direction: row;
-}
+<style scoped>
+
 </style>
