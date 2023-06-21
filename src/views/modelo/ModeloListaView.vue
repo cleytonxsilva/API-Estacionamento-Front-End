@@ -17,7 +17,7 @@
                     <th class="col-1" scope="col">Id</th>
                     <th class="col-6 text-start" scope="col">Modelo</th>
                     <th class="col-2 text-start" scope="col">Marca</th>
-                    <th class="col-3" scope="col">Opções</th>
+                    <th class="col-2" scope="col">Opções</th>
                 </tr>
             </thead>
             <tbody>
@@ -26,7 +26,6 @@
                     <td class="text-start">{{ item.modelo }}</td>
                     <td class="text-start">{{ item.marca }}</td>
                     <td>
-                        <button class="btn btn-outline-success">Mostrar Mais</button>
                         <button class="btn btn-outline-warning">Editar</button>
                         <button class="btn btn-outline-danger">Excluir</button>
                     </td>

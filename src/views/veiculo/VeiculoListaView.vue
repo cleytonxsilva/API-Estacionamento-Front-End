@@ -20,7 +20,7 @@
                     <th class="col-2 text-start" scope="col">Modelo</th>
                     <th class="col-1 text-start" scope="col">Cor</th>
                     <th class="col-2 text-start" scope="col">Tipo</th>
-                    <th class="col-3 text-center" scope="col">Opções</th>
+                    <th class="col-2 text-center" scope="col">Opções</th>
                 </tr>
             </thead>
             <tbody>
@@ -32,7 +32,6 @@
                     <td class="text-start">{{ item.cor }}</td>
                     <td class="text-start">{{ item.tipo }}</td>
                     <td>
-                        <button class="btn btn-outline-success">Mostrar Mais</button>
                         <button class="btn btn-outline-warning">Editar</button>
                         <button class="btn btn-outline-danger">Excluir</button>
                     </td>
@@ -57,7 +56,7 @@ export default {
         };
     },
     // components: {
-    //     MarcaForm,
+    //     VeiculoForm,
     // },
     methods: {
         cadastrarVeiculo() {

@@ -15,7 +15,7 @@
             <thead class="table-active">
                 <tr>
                     <th class="col-1" scope="col">Id</th>
-                    <th class="col-7 text-start" scope="col">Marca</th>
+                    <th class="col-8 text-start" scope="col">Marca</th>
                     <th class="col-3 text-center" scope="col">Opções</th>
                 </tr>
             </thead>
@@ -24,7 +24,6 @@
                     <th scope="row">{{ item.id }}</th>
                     <td class="text-start">{{ item.marca }}</td>
                     <td>
-                        <button class="btn btn-outline-success">Mostrar Mais</button>
                         <button class="btn btn-outline-warning">Editar</button>
                         <button class="btn btn-outline-danger">Excluir</button>
                     </td>
