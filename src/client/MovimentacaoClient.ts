@@ -50,4 +50,4 @@ private axiosClient: AxiosInstance;
             return Promise.reject(error.response)
         }
     }
-}
+}export default new MovimentacaoClient();

@@ -52,4 +52,5 @@ export class VeiculoClient {
         }
     }
 }
+export default new VeiculoClient();
 

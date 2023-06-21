@@ -51,3 +51,4 @@ private axiosClient: AxiosInstance;
         }
     }
 }
+export default new ModeloClient();

@@ -36,3 +36,4 @@ export class ConfiguracaoClient{
 		}
 	}
 }
+export default new ConfiguracaoClient();
