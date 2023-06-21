@@ -1,10 +1,10 @@
 <template>
     <div class="condutor-lista"></div>
     <div class="row">
-        <div class="col-10 text-start">
+        <div class="col-9 text-start">
             <h2>Condutores</h2>
         </div>
-        <div class="col-2">
+        <div class="col-3">
             <router-link to="/condutor-form">
                 <button class="btn btn-success" type="button" @click="cadastrarCondutor">Cadastrar Condutor</button>
             </router-link>
@@ -14,19 +14,19 @@
             <table class="table table-responsive table-dark table-hover table-bordered">
                 <thead class="table-active">
                     <tr>
-                        <th scope="col">Id</th>
-                        <th scope="col">Nome do Condutor</th>
-                        <th scope="col">CPF</th>
-                        <th scope="col">Telefone</th>
-                        <th scope="col">Tempo pago</th>
-                        <th scope="col">Desconto acumulado</th>
-                        <th scope="col">Opções</th>
+                        <th class="col-1" scope="col">Id</th>
+                        <th class="col-2 text-start" scope="col">Nome do Condutor</th>
+                        <th class="col-2" scope="col">CPF</th>
+                        <th class="col-2" scope="col">Telefone</th>
+                        <th class="col-1" scope="col">Tempo pago</th>
+                        <th class="col-1" scope="col">Desconto acumulado</th>
+                        <th class="col-3 text-center" scope="col">Opções</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr v-for="item in items" :key="item.id">
                         <th scope="row">{{ item.id }}</th>
-                        <td>{{ item.nome }}</td>
+                        <td class="text-start">{{ item.nome }}</td>
                         <td>{{ item.cpf }}</td>
                         <td>{{ item.telefone }}</td>
                         <td>{{ item.tempoPago }}</td>

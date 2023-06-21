@@ -1,10 +1,10 @@
 <template>
     <div class="modelo-lista"></div>
     <div class="row">
-        <div class="col-10 text-start">
+        <div class="col-9 text-start">
             <h2>Modelos</h2>
         </div>
-        <div class="col-2">
+        <div class="col-3">
             <router-link to="/modelo-form">
                 <button class="btn btn-success" type="button" @click="">Cadastrar Modelo</button>
             </router-link>
