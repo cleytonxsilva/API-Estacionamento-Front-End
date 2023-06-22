@@ -1,33 +1,28 @@
 <template>
     <div class="condutor-form">
-        <form action="">
-            <table class="table table-responsive table-dark table-hover">
-                <div class="input-container">
-                    <tbody class="">
-                    <td>
-                        <label for="nomeCondutor">Nome:</label>
-                        <input type="text" id="nomeCondutor" name="nomeCondutor"><!---for="item in Condutor" :key="item.nomeCondutor"-->
-                    </td>
-                    <td>
-                        <label for="cpf">CPF:</label>
-                        <input type="text" id="cpf" name="cpf">
-                    </td>
-                    <td>
-                        <label for="telefone">Telefone:</label>
-                        <input type="text" id="telefone" name="telefone">
-                    </td>
-                    <td>
-                        <label for="tempoPago">Tempo Pago:</label>
-                        <input type="text" id="tempoPago" name="tempoPago">
-                    </td>
-                    <td>
-                        <label for="tempoDesconto">Desconto Acumulado:</label>
-                        <input type="text" id="tempoDesconto" name="tempoDesconto">
-                    </td>
-                    <input type="submit" class="submit-btn" value="Cadastrar">
-                </tbody>
-                </div>
-            </table>
+        <form>
+            <div class="mb-3">
+                <label for="nomeCondutor" class="form-label">Nome:</label>
+                <input type="text" id="nomeCondutor" name="nomeCondutor" class="form-control w-25">
+            </div>
+            <div class="mb-3">
+                <label for="cpf" class="form-label">CPF:</label>
+                <input type="text" id="cpf" name="cpf" class="form-control w-25">
+            </div>
+            <div class="mb-3">
+                <label for="telefone" class="form-label">Telefone:</label>
+                <input type="text" id="telefone" name="telefone" class="form-control w-25">
+            </div>
+            <div class="mb-3">
+
+                <label for="tempoPago" class="form-label">Tempo Pago:</label>
+                <input type="text" id="tempoPago" name="tempoPago" class="form-control w-25">
+            </div>
+            <div class="mb-3">
+                <label for="tempoDesconto" class="form-label">Desconto Acumulado:</label>
+                <input type="text" id="tempoDesconto" name="tempoDesconto" class="form-control w-25">
+            </div>
+            <button type="submit" class="btn btn-warning">Cadastrar</button>
         </form>
     </div>
 </template>
@@ -45,4 +40,8 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+/* .condutor-form{
+
+} */
+</style>

@@ -20,7 +20,7 @@ export class CondutorClient {
         }
     }
 
-    public async listaCompleta(condutor: Condutor[]) : Promise<Condutor[]>{
+    public async listaCompleta() : Promise<Condutor[]>{
         try {
             return (await this.axiosClient.get<Condutor[]>(`/lista`)).data
         } catch (error:any) {
