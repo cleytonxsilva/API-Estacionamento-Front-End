@@ -1,25 +1,25 @@
 <template>
-    <div class="condutor-form">
+    <div class="container-form">
         <form>
             <div class="mb-3">
-                <label for="nomeCondutor" class="form-label">Nome:</label>
+                <label for="nomeCondutor" class="col-2 form-label">Nome:</label>
                 <input type="text" id="nomeCondutor" name="nomeCondutor" class="form-control w-25">
             </div>
             <div class="mb-3">
-                <label for="cpf" class="form-label">CPF:</label>
+                <label for="cpf" class="col-2 form-label">CPF:</label>
                 <input type="text" id="cpf" name="cpf" class="form-control w-25">
             </div>
             <div class="mb-3">
-                <label for="telefone" class="form-label">Telefone:</label>
+                <label for="telefone" class="col-2 form-label">Telefone:</label>
                 <input type="text" id="telefone" name="telefone" class="form-control w-25">
             </div>
             <div class="mb-3">
 
-                <label for="tempoPago" class="form-label">Tempo Pago:</label>
+                <label for="tempoPago" class="col-2 form-label">Tempo Pago:</label>
                 <input type="text" id="tempoPago" name="tempoPago" class="form-control w-25">
             </div>
             <div class="mb-3">
-                <label for="tempoDesconto" class="form-label">Desconto Acumulado:</label>
+                <label for="tempoDesconto" class="col-2 form-label">Desconto Acumulado:</label>
                 <input type="text" id="tempoDesconto" name="tempoDesconto" class="form-control w-25">
             </div>
             <button type="submit" class="btn btn-warning">Cadastrar</button>
@@ -41,7 +41,7 @@ export default {
 </script>
 
 <style scoped>
-/* .condutor-form{
-
-} */
+.container-form{
+    text-align: start;
+}
 </style>
