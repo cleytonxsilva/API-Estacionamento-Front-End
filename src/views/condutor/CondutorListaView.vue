@@ -15,6 +15,7 @@
             <thead class="table-active">
                 <tr>
                     <th class="col-1" scope="col">Id</th>
+                    <th class="col-1" scope="col">Ativo</th>
                     <th class="col-3 text-start" scope="col">Nome do Condutor</th>
                     <th class="col-1" scope="col">CPF</th>
                     <th class="col-1" scope="col">Telefone</th>
@@ -24,16 +25,28 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="item in condutorList" :key="item.id">
-                    <th scope="row">{{ item.id }}</th>
+                <tr v-for="item in condutorListJS" :key="item.id">
+                    <td scope="row">{{ item.id }}</td>
+                    <td class="col-1 text-center">
+                        <span v-if="item.ativo" class="badge text-bg-success"> Ativo </span>
+                        <span v-if="!item.ativo" class="badge text-bg-danger"> Inativo </span>
+                    </td>
                     <td class="text-start">{{ item.nomeCondutor }}</td>
                     <td>{{ item.cpf }}</td>
                     <td>{{ item.telefone }}</td>
                     <td>{{ item.tempoPago }}</td>
                     <td>{{ item.tempoDesconto }}</td>
                     <td>
-                        <button class="btn btn-outline-warning">Editar</button>
-                        <button class="btn btn-outline-danger">Excluir</button>
+                        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                            <router-link type="button" class="btn btn-warning"
+                                :to="{ name: 'condutor-form-editar-view', query: { id: item.id, form: 'editar' } }">
+                                Editar
+                            </router-link>
+                            <router-link type="button" class="btn btn-danger"
+                                :to="{ name: 'condutor-form-excluir-view', query: { id: item.id, form: 'excluir' } }">
+                                Excluir
+                            </router-link>
+                        </div>
                     </td>
                 </tr>
             </tbody>
@@ -47,7 +60,10 @@ import { defineComponent } from 'vue';
 export default defineComponent({
     data() {
         return {
-            condutorList: new Array<Condutor>()
+            condutorList: new Array<Condutor>(),
+            condutorListJS: [{
+                id: 1, ativo: true, nomeCondutor: 'Dudu'
+            }]
         }
     },
 

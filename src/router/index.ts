@@ -8,7 +8,7 @@ const routes: Array<RouteRecordRaw> = [
     component: HomeView
   },
   {
-    path: '/condutor-lista',
+    path: '/condutor/CondutorListaView',
     name: 'condutor-lista',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
@@ -16,10 +16,23 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('../views/condutor/CondutorListaView.vue')
   },
   {
-    path: '/condutor-form',
+    path: '/condutor/CondutorForm',
     name: 'condutor-form',
-    component: () => import( '../views/condutor/CondutorForm.vue')
+    component: () => import('../views/condutor/CondutorForm.vue'),
+    children: [
+      {
+        path: '/condutor/CondutorForm',
+        name: 'condutor-form-editar-view',
+        component: () => import('../views/condutor/CondutorForm.vue'),
+      },
+      {
+        path: '/condutor/CondutorForm',
+        name: 'condutor-form-excluir-view',
+        component: () => import('../views/condutor/CondutorForm.vue'),
+      }
+    ]
   },
+
   {
     path: '/marca-lista',
     name: 'marca-lista',
@@ -29,7 +42,7 @@ const routes: Array<RouteRecordRaw> = [
     path: '/modelo-lista',
     name: 'modelo-lista',
     component: () => import(/* webpackChunkName: "about" */ '../views/modelo/ModeloListaView.vue')
-  },{
+  }, {
     path: '/veiculo-lista',
     name: 'veiculo-lista',
     component: () => import(/* webpackChunkName: "about" */ '../views/veiculo/VeiculoListaView.vue')
