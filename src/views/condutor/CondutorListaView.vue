@@ -61,8 +61,9 @@ export default defineComponent({
     data() {
         return {
             condutorList: new Array<Condutor>(),
-            condutorListJS: [{
-                id: 1, ativo: true, nomeCondutor: 'Dudu'
+            condutorListJS: [
+                {id: 1, ativo: true, nomeCondutor: 'Dudu', cpf: '123', telefone: '45999999999', tempoPago: '00:00h', tempoDesconto: '00:00h'},
+                {id: 2, ativo: false, nomeCondutor: 'XPTO', cpf: '456', telefone: '45999999998', tempoPago: '00:00h', tempoDesconto: '00:00h'
             }]
         }
     },

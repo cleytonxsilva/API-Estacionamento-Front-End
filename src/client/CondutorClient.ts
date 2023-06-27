@@ -14,7 +14,7 @@ export class CondutorClient {
 
     public async findById(id: number) : Promise<Condutor> {
         try {
-            return (await this.axiosClient.get<Condutor>(`?id=${id}`)).data
+            return (await this.axiosClient.get<Condutor>(`/${id}`)).data
         } catch (error:any) {
             return Promise.reject(error.response)
         }
@@ -46,7 +46,7 @@ export class CondutorClient {
 
     public async excluir(id: number) : Promise<void> {
         try {
-            return (await this.axiosClient.delete(`?id=${id}`)).data
+            return (await this.axiosClient.delete(`/${id}`)).data
         } catch (error:any) {
             return Promise.reject(error.response)
         }

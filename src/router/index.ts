@@ -8,7 +8,7 @@ const routes: Array<RouteRecordRaw> = [
     component: HomeView
   },
   {
-    path: '/condutor/CondutorListaView',
+    path: '/condutor-lista',
     name: 'condutor-lista',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
@@ -16,17 +16,17 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('../views/condutor/CondutorListaView.vue')
   },
   {
-    path: '/condutor/CondutorForm',
+    path: '/condutor-form',
     name: 'condutor-form',
     component: () => import('../views/condutor/CondutorForm.vue'),
     children: [
       {
-        path: '/condutor/CondutorForm',
+        path: '/condutor-form',
         name: 'condutor-form-editar-view',
         component: () => import('../views/condutor/CondutorForm.vue'),
       },
       {
-        path: '/condutor/CondutorForm',
+        path: '/condutor-form',
         name: 'condutor-form-excluir-view',
         component: () => import('../views/condutor/CondutorForm.vue'),
       }

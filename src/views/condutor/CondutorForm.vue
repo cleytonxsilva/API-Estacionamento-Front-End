@@ -2,10 +2,10 @@
     <div class="container">
 
         <div class="row">
-            <div class="col-md-10 text-start">
+            <div class="col-md12 text-center">
                 <p class="fs-3"> Cadastrar Condutor </p>
             </div>
-            <div class="col-md-2"> </div>
+            <div class="col-md-2"></div>
         </div>
 
         <hr />
@@ -22,27 +22,37 @@
         <div class="row">
             <div class="col-md-12 text-start">
                 <label class="form-label">Nome do Condutor *</label>
-                <input type="text" :disabled="this.form === 'excluir' ? '' : disabled" class="form-control"
-                    v-model="condutor.nomeCondutor">
+                <input type="text" :disabled="form === 'excluir'" class="form-control" v-model="condutor.nomeCondutor">
+            </div>
+            <div class="col-md-12 text-start">
+                <label class="form-label">CPF *</label>
+                <input type="text" :disabled="form === 'excluir'" class="form-control"
+                    v-model="condutor.cpf">
+            </div>
+            <div class="col-md-12 text-start">
+                <label class="form-label">Telefone *</label>
+                <input type="text" :disabled="form === 'excluir'" class="form-control"
+                    v-model="condutor.telefone">
             </div>
         </div>
 
         <div class="row">
             <div class="col-md-3 offset-md-6">
                 <div class="d-grid gap-2">
-                    <router-link type="button" class="btn btn-info" to="/condutor-lista">Voltar
+                    <router-link type="button" class="btn btn-warning" to="/condutor-lista">Voltar
                     </router-link>
                 </div>
             </div>
             <div class="col-md-3 ">
                 <div class="d-grid gap-2">
-                    <button v-if="this.form === undefined" type="button" class="btn btn-success" @click="onClickCadastrar()">
+                    <button v-if="form === undefined" type="button" class="btn btn-success"
+                        @click="onClickCadastrar()">
                         Cadastrar
                     </button>
-                    <button v-if="this.form === 'editar'" type="button" class="btn btn-warning" @click="onClickEditar()">
+                    <button v-if="form === 'editar'" type="button" class="btn btn-info" @click="onClickEditar()">
                         Editar
                     </button>
-                    <button v-if="this.form === 'excluir'" type="button" class="btn btn-danger" @click="onClickExcluir()">
+                    <button v-if="form === 'excluir'" type="button" class="btn btn-danger" @click="onClickExcluir()">
                         Excluir
                     </button>
                 </div>
@@ -61,6 +71,7 @@ export default defineComponent({
     name: 'CondutorForm',
     data() {
         return {
+
             condutor: new Condutor(),
             mensagem: {
                 ativo: false as boolean,
