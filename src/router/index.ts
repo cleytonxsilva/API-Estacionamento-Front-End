@@ -39,6 +39,23 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import(/* webpackChunkName: "about" */ '../views/marca/MarcaListaView.vue')
   },
   {
+    path: '/marca-form',
+    name: 'marca-form',
+    component: () => import('../views/marca/MarcaForm.vue'),
+    children: [
+      {
+        path: '/marca-form',
+        name: 'marca-form-editar-view',
+        component: () => import('../views/marca/MarcaForm.vue'),
+      },
+      {
+        path: '/marca-form',
+        name: 'marca-form-excluir-view',
+        component: () => import('../views/marca/MarcaForm.vue'),
+      }
+    ]
+  },
+  {
     path: '/modelo-lista',
     name: 'modelo-lista',
     component: () => import(/* webpackChunkName: "about" */ '../views/modelo/ModeloListaView.vue')

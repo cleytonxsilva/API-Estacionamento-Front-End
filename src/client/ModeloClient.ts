@@ -6,46 +6,46 @@ private axiosClient: AxiosInstance;
 
     constructor() {
         this.axiosClient = axios.create({
-            baseURL: 'http://localhost:8080/api/modelo',
+            baseURL: 'http://localhost:8080/api',
             headers: {'Content-type' : 'application/json'}
         });
     }
 
     public async findById(id: number) : Promise<Modelo> {
         try {
-            return (await this.axiosClient.get<Modelo>(`?id=${id}`)).data
+            return (await this.axiosClient.get<Modelo>(`/modelo?id=${id}`)).data
         } catch (error:any) {
             return Promise.reject(error.response)
         }
     }
 
-    public async listaCompleta(marca: Modelo[]) : Promise<Modelo[]>{
+    public async listaCompleta() : Promise<Modelo[]>{
         try {
-            return (await this.axiosClient.get<Modelo[]>(`/lista`)).data
+            return (await this.axiosClient.get<Modelo[]>(`/modelo/lista`)).data
         } catch (error:any) {
             return Promise.reject(error.response)
         }
     }
 
-	public async cadastrar(modelo: Modelo): Promise<void> {
+	public async cadastrar(modelo: Modelo): Promise<string> {
 		try {
-			return (await this.axiosClient.post('/', modelo))
+			return (await this.axiosClient.post<string>('/modelo', modelo)).data
 		} catch (error:any) {
 			return Promise.reject(error.response)
 		}
 	}
 
-	public async editar(modelo: Modelo): Promise<void> {
+	public async editar(id: number, modelo: Modelo): Promise<string> {
 		try {
-			return (await this.axiosClient.put(`/${modelo.id}`, modelo)).data
+			return (await this.axiosClient.put<string>(`/modelo?id=${modelo.id}`, modelo)).data
 		} catch (error:any) {
 			return Promise.reject(error.response)
 		}
 	}
 
-    public async excluir(id: number) : Promise<void> {
+    public async excluir(id: number) : Promise<string> {
         try {
-            return (await this.axiosClient.delete(`?id=${id}`)).data
+            return (await this.axiosClient.delete<string>(`/modelo?id=${id}`)).data
         } catch (error:any) {
             return Promise.reject(error.response)
         }

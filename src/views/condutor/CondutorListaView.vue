@@ -1,5 +1,5 @@
 <template>
-    <div class="/condutor/lista"></div>
+    <div class="condutor-lista"></div>
     <div class="row">
         <div class="col-9 text-start">
             <h2>Condutores</h2>
