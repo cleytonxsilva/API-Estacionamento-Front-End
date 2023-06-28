@@ -3,5 +3,5 @@ import { Marca } from "./Marca";
 
 export class Modelo extends AbstractEntity{
     modelo! : string
-    marca! : Marca[]
+    marca! : Marca
 }

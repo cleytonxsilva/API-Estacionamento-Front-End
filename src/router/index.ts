@@ -59,6 +59,23 @@ const routes: Array<RouteRecordRaw> = [
     path: '/modelo-lista',
     name: 'modelo-lista',
     component: () => import(/* webpackChunkName: "about" */ '../views/modelo/ModeloListaView.vue')
+  },
+  {
+    path: '/modelo-form',
+    name: 'modelo-form',
+    component: () => import('../views/modelo/ModeloForm.vue'),
+    children: [
+      {
+        path: '/modelo-form',
+        name: 'modelo-form-editar-view',
+        component: () => import('../views/modelo/ModeloForm.vue'),
+      },
+      {
+        path: '/modelo-form',
+        name: 'modelo-form-excluir-view',
+        component: () => import('../views/modelo/ModeloForm.vue'),
+      }
+    ]
   }, {
     path: '/veiculo-lista',
     name: 'veiculo-lista',
