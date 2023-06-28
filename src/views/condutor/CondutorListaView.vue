@@ -1,5 +1,5 @@
 <template>
-    <div class="condutor-lista"></div>
+    <div class="/condutor/lista"></div>
     <div class="row">
         <div class="col-9 text-start">
             <h2>Condutores</h2>
@@ -25,7 +25,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="item in condutorListJS" :key="item.id">
+                <tr v-for="item in condutorList" :key="item.id">
                     <td scope="row">{{ item.id }}</td>
                     <td class="col-1 text-center">
                         <span v-if="item.ativo" class="badge text-bg-success"> Ativo </span>
@@ -60,11 +60,7 @@ import { defineComponent } from 'vue';
 export default defineComponent({
     data() {
         return {
-            condutorList: new Array<Condutor>(),
-            condutorListJS: [
-                {id: 1, ativo: true, nomeCondutor: 'Dudu', cpf: '123', telefone: '45999999999', tempoPago: '00:00h', tempoDesconto: '00:00h'},
-                {id: 2, ativo: false, nomeCondutor: 'XPTO', cpf: '456', telefone: '45999999998', tempoPago: '00:00h', tempoDesconto: '00:00h'
-            }]
+            condutorList: new Array<Condutor>()
         }
     },
 

@@ -26,13 +26,11 @@
             </div>
             <div class="col-md-12 text-start">
                 <label class="form-label">CPF *</label>
-                <input type="text" :disabled="form === 'excluir'" class="form-control"
-                    v-model="condutor.cpf">
+                <input type="text" :disabled="form === 'excluir'" class="form-control" v-model="condutor.cpf">
             </div>
             <div class="col-md-12 text-start">
                 <label class="form-label">Telefone *</label>
-                <input type="text" :disabled="form === 'excluir'" class="form-control"
-                    v-model="condutor.telefone">
+                <input type="text" :disabled="form === 'excluir'" class="form-control" v-model="condutor.telefone">
             </div>
         </div>
 
@@ -45,8 +43,7 @@
             </div>
             <div class="col-md-3 ">
                 <div class="d-grid gap-2">
-                    <button v-if="form === undefined" type="button" class="btn btn-success"
-                        @click="onClickCadastrar()">
+                    <button v-if="form === undefined" type="button" class="btn btn-success" @click="onClickCadastrar()">
                         Cadastrar
                     </button>
                     <button v-if="form === 'editar'" type="button" class="btn btn-info" @click="onClickEditar()">
@@ -103,7 +100,6 @@ export default defineComponent({
             CondutorClient.cadastrar(this.condutor)
                 .then(sucess => {
                     this.condutor = new Condutor()
-
                     this.mensagem.ativo = true;
                     this.mensagem.mensagem = sucess;
                     this.mensagem.titulo = "Parabéns. ";
@@ -132,7 +128,6 @@ export default defineComponent({
             CondutorClient.editar(this.condutor.id, this.condutor)
                 .then(sucess => {
                     this.condutor = new Condutor()
-
                     this.mensagem.ativo = true;
                     this.mensagem.mensagem = sucess;
                     this.mensagem.titulo = "Parabens. ";
@@ -149,7 +144,6 @@ export default defineComponent({
             CondutorClient.excluir(this.condutor.id)
                 .then(sucess => {
                     this.condutor = new Condutor()
-
                     this.$router.push({ name: 'condutor-lista' });
                 })
                 .catch(error => {
