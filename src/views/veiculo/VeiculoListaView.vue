@@ -2,11 +2,11 @@
     <div class="veiculo-lista"></div>
     <div class="row">
         <div class="col-9 text-start">
-            <h2>Veículo</h2>
+            <h2>Veiculos</h2>
         </div>
         <div class="col-3">
             <router-link to="/veiculo-form">
-                <button class="btn btn-success" type="button" @click="cadastrarVeiculo">Cadastrar Veículo</button>
+                <button class="btn btn-success" type="button">Cadastrar Veiculo</button>
             </router-link>
         </div>
     </div>
@@ -15,58 +15,71 @@
             <thead class="table-active">
                 <tr>
                     <th class="col-1" scope="col">Id</th>
-                    <th class="col-2 text-start" scope="col">Placa</th>
-                    <th class="col-1 text-center" scope="col">Ano</th>
-                    <th class="col-2 text-start" scope="col">Modelo</th>
-                    <th class="col-1 text-start" scope="col">Cor</th>
-                    <th class="col-2 text-start" scope="col">Tipo</th>
-                    <th class="col-2 text-center" scope="col">Opções</th>
+                    <th class="col-1" scope="col">Ativo</th>
+                    <th class="col-8 text-start" scope="col">Placa</th>
+                    <th class="col-8 text-start" scope="col">Ano</th>
+                    <th class="col-8 text-start" scope="col">Modelo</th>
+                    <th class="col-8 text-start" scope="col">Cor</th>
+                    <th class="col-8 text-start" scope="col">Tipo</th>
+                    <th class="col-3 text-center" scope="col">Opções</th>
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="item in items" :key="item.id">
-                    <th scope="row">{{ item.id }}</th>
+                <tr v-for="item in veiculoList" :key="item.id">
+                    <td scope="row">{{ item.id }}</td>
+                    <td class="col-1 text-center">
+                        <span v-if="item.ativo" class="badge text-bg-success"> Ativo </span>
+                        <span v-if="!item.ativo" class="badge text-bg-danger"> Inativo </span>
+                    </td>
                     <td class="text-start">{{ item.placaCarro }}</td>
-                    <td class="text-start">{{ item.ano }}</td>
-                    <td class="text-start">{{ item.modelo }}</td>
+                    <td class="text-start">{{ item.anoCarro }}</td>
+                    <td class="text-start">{{ item.modelo.modelo }}</td>
                     <td class="text-start">{{ item.cor }}</td>
                     <td class="text-start">{{ item.tipo }}</td>
                     <td>
-                        <button class="btn btn-outline-warning">Editar</button>
-                        <button class="btn btn-outline-danger">Excluir</button>
+                        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                            <router-link type="button" class="btn btn-warning"
+                                :to="{ name: 'veiculo-form-editar-view', query: { id: item.id, form: 'editar' } }">
+                                Editar
+                            </router-link>
+                            <router-link type="button" class="btn btn-danger"
+                                :to="{ name: 'veiculo-form-excluir-view', query: { id: item.id, form: 'excluir' } }">
+                                Excluir
+                            </router-link>
+                        </div>
                     </td>
                 </tr>
             </tbody>
         </table>
     </div>
 </template>
-<script lang="ts">
 
-export default {
+<script lang="ts">
+import VeiculoClient from '@/client/VeiculoClient';
+import { Veiculo } from '@/model/Veiculo';
+import { defineComponent } from 'vue';
+
+export default defineComponent({
     data() {
         return {
-            items: [
-                { id: 1, placaCarro: 'ABC', ano: 2000, modelo: 'Corsa', cor: 'BRANCO', tipo: 'CARRO' },
-                { id: 2, placaCarro: 'DEF', ano: 2001, modelo: 'Fiesta', cor: 'PRATA', tipo: 'CARRO' },
-                { id: 3, placaCarro: 'GHI', ano: 2002, modelo: 'Uno', cor: 'PRETO', tipo: 'CARRO' },
-                { id: 4, placaCarro: 'JKL', ano: 2003, modelo: 'Civic', cor: 'VERMELHO', tipo: 'CARRO' },
-                { id: 5, placaCarro: 'MNO', ano: 2004, modelo: 'HB-20', cor: 'PRATA', tipo: 'CARRO' }
-            
-            ]
-        };
+            veiculoList: new Array<Veiculo>()
+        }
     },
-    // components: {
-    //     VeiculoForm,
-    // },
+
+    mounted() {
+        this.listaCompleta();
+    },
     methods: {
-        cadastrarVeiculo() {
-            console.log("ok");
+        listaCompleta() {
+            VeiculoClient.listaCompleta()
+                .then(sucess => {
+                    this.veiculoList = sucess
+                })
+                .catch(error => {
+                    console.log(error);
+                });
         }
     }
-}
-
-
+});
 </script>
-<style scoped>
-
-</style>
+<style scoped></style>

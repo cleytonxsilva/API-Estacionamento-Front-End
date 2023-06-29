@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <h1>Estacionamento</h1>
+    <h1>Estacionamento do Pedro</h1>
   </div>
 </template>
 

@@ -6,7 +6,7 @@ import { TipoVeiculo } from "./TipoVeiculo";
 export class Veiculo extends AbstractEntity{
     placaCarro! : string
     anoCarro! : number
-    modelo! : Modelo[]
+    modelo! : Modelo
     cor! : Cor[]
-    tipoVeiculo! : TipoVeiculo[]
+    tipo! : TipoVeiculo[]
 }

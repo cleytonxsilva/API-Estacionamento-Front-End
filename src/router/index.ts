@@ -82,6 +82,23 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import(/* webpackChunkName: "about" */ '../views/veiculo/VeiculoListaView.vue')
   },
   {
+    path: '/veiculo-form',
+    name: 'veiculo-form',
+    component: () => import('../views/veiculo/VeiculoForm.vue'),
+    children: [
+      {
+        path: '/veiculo-form',
+        name: 'veiculo-form-editar-view',
+        component: () => import('../views/veiculo/VeiculoForm.vue'),
+      },
+      {
+        path: '/veiculo-form',
+        name: 'veiculo-form-excluir-view',
+        component: () => import('../views/veiculo/VeiculoForm.vue'),
+      }
+    ]
+  },
+  {
     path: '/movimentacao-lista',
     name: 'movimentacao-lista',
     component: () => import(/* webpackChunkName: "about" */ '../views/movimentacao/MovimentacaoListaView.vue')
