@@ -99,9 +99,21 @@ const routes: Array<RouteRecordRaw> = [
     ]
   },
   {
-    path: '/movimentacao-lista',
-    name: 'movimentacao-lista',
-    component: () => import(/* webpackChunkName: "about" */ '../views/movimentacao/MovimentacaoListaView.vue')
+    path: '/movimentacao-form',
+    name: 'movimentacao-form',
+    component: () => import('../views/movimentacao/MovimentacaoForm.vue'),
+    children: [
+      {
+        path: '/movimentacao-form',
+        name: 'movimentacao-form-editar-view',
+        component: () => import('../views/movimentacao/MovimentacaoForm.vue'),
+      },
+      {
+        path: '/movimentacao-form',
+        name: 'movimentacao-form-excluir-view',
+        component: () => import('../views/movimentacao/MovimentacaoForm.vue'),
+      }
+    ]
   },
   {
     path: '/configuracao',
