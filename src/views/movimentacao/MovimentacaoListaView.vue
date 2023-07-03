@@ -17,17 +17,17 @@
                     <th class="col-1" scope="col">Id</th>
                     <th class="col-1" scope="col">Ativo</th>
                     <th class="col-1 text-start" scope="col">Placa</th>
-                    <th class="col-2 text-center" scope="col">Condutor</th>
+                    <th class="col-2 text-start" scope="col">Nome do Condutor</th>
                     <th class="col-1 text-center" scope="col">Entrada</th>
-                    <th class="col-1 text-center" scope="col">Saída</th>
+                    <!-- <th class="col-1 text-center" scope="col">Saída</th>
                     <th class="col-1 text-center" scope="col">Valor Multa</th>
                     <th class="col-1 text-center" scope="col">Valor Hora</th>
                     <th class="col-1 text-center" scope="col">Valor Hora/Multa</th>
                     <th class="col-1 text-center" scope="col">Valor de Desconto</th>
                     <th class="col-1 text-center" scope="col">Valor Total</th>
-                    <th class="col-2 text-center" scope="col">Tempo Estacionado</th>
                     <th class="col-2 text-center" scope="col">Desconto Acumulado</th>
-                    <th class="col-2 text-center" scope="col">Tempo da Multa</th>
+                    <th class="col-2 text-center" scope="col">Tempo da Multa</th> -->
+                    <th class="col-2 text-center" scope="col">Tempo Estacionado</th>
                     <th class="col-2 text-center" scope="col">Opções</th>
                 </tr>
             </thead>
@@ -39,17 +39,17 @@
                         <span v-if="!item.ativo" class="badge text-bg-danger"> Inativo </span>
                     </td>
                     <td class="text-start">{{ item.veiculo.placaCarro }}</td>
-                    <td class="text-start">{{ item.condutor }}</td>
-                    <td class="text-center">{{ item.entrada }}</td>
-                    <td class="text-center">{{ item.saida }}</td>
+                    <td class="text-start">{{ item.condutor.nomeCondutor }}</td>
+                    <td class="text-center">{{ item.entrada }}</td> <!--Formatar data-->
+                    <!-- <td class="text-center">{{ item.saida }}</td> 
                     <td class="text-center">{{ item.valorMulta }}</td>
                     <td class="text-center">{{ item.valorHora }}</td>
                     <td class="text-center">{{ item.valorHoraMulta }}</td>
                     <td class="text-center">{{ item.valorDesconto }}</td>
                     <td class="text-center">{{ item.valorTotal }}</td>
-                    <td class="text-center">{{ item.tempoEstacionado }}</td>
                     <td class="text-center">{{ item.tempoDesconto }}</td>
-                    <td class="text-center">{{ item.tempoMulta }}</td>
+                    <td class="text-center">{{ item.tempoMulta }}</td> -->
+                    <td class="text-center">{{ item.tempo }}</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic mixed styles example">
                             <router-link type="button" class="btn btn-warning"

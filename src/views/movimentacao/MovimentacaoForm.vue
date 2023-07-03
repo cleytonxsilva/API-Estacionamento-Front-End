@@ -22,18 +22,31 @@
         <div class="row">
             <div class="col-md-12 text-start">
                 <label class="form-label">Movimentação: *</label>
+                <hr>
+                <label for="">Veículo</label>
                 <input type="text" :disabled="form === 'excluir'" class="form-control" v-model="veiculo.id" placeholder="Id-Veículo">
+                <label for="">Condutor</label>
                 <input type="text" :disabled="form === 'excluir'" class="form-control" v-model="condutor.id" placeholder="Id-Condutor">
-                <input type="text" :disabled="form === 'excluir'" class="form-control" v-model="movimentacao.entrada" placeholder="Id-">
-                <input type="text" :disabled="form === 'excluir'" class="form-control" v-model="movimentacao.saida" placeholder="Id-">
-                <input type="text" :disabled="form === 'excluir'" class="form-control" v-model="movimentacao.tempo" placeholder="Id-">
-                <input type="text" :disabled="form === 'excluir'" class="form-control" v-model="movimentacao.tempoDesconto" placeholder="Id-">
-                <input type="text" :disabled="form === 'excluir'" class="form-control" v-model="movimentacao.tempoMulta" placeholder="Id-">
-                <input type="text" :disabled="form === 'excluir'" class="form-control" v-model="movimentacao.valorDesconto" placeholder="Id-">
-                <input type="text" :disabled="form === 'excluir'" class="form-control" v-model="movimentacao.valorMulta" placeholder="Id-">
-                <input type="text" :disabled="form === 'excluir'" class="form-control" v-model="movimentacao.valorTotal" placeholder="Id-">
-                <input type="text" :disabled="form === 'excluir'" class="form-control" v-model="movimentacao.valorHora" placeholder="Id-">
-                <input type="text" :disabled="form === 'excluir'" class="form-control" v-model="movimentacao.valorHoraMulta" placeholder="Id-">
+                <label for="">Horário de Entrada</label>
+                <input type="datetime-local" :disabled="form === 'excluir'" class="form-control" v-model="movimentacao.entrada">
+                <label for="">Horário de Saída</label>
+                <input type="datetime-local" :disabled="form === 'excluir'" class="form-control" v-model="movimentacao.saida">
+                <label for="">Tempo Estacionado</label>
+                <input type="datetime-local" :disabled="form === 'excluir'" class="form-control" v-model="movimentacao.tempo">
+                <label for="">Desconto Acumulado</label>
+                <input type="" :disabled="form === 'excluir'" class="form-control" v-model="movimentacao.tempoDesconto">
+                <label for="">Tempo de Multa</label>
+                <input type="text" :disabled="form === 'excluir'" class="form-control" v-model="movimentacao.tempoMulta">
+                <label for="">Tempo de Desconto</label>
+                <input type="text" :disabled="form === 'excluir'" class="form-control" v-model="movimentacao.valorDesconto">
+                <label for="">Valor da Multa</label>
+                <input type="text" :disabled="form === 'excluir'" class="form-control" v-model="movimentacao.valorMulta">
+                <label for="">Valor total</label>
+                <input type="text" :disabled="form === 'excluir'" class="form-control" v-model="movimentacao.valorTotal">
+                <label for="">Valor Hora</label>
+                <input type="text" :disabled="form === 'excluir'" class="form-control" v-model="movimentacao.valorHora">
+                <label for="">Valor Hora / Multa</label>
+                <input type="text" :disabled="form === 'excluir'" class="form-control" v-model="movimentacao.valorHoraMulta">
             
             </div>
         </div>

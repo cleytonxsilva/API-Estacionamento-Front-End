@@ -97,7 +97,12 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('../views/veiculo/VeiculoForm.vue'),
       }
     ]
-  },
+  },{
+    path: '/movimentacao-lista',
+    name: 'movimentacao-lista',
+    component: () => import(/* webpackChunkName: "about" */ '../views/movimentacao/MovimentacaoListaView.vue')
+  }
+  ,
   {
     path: '/movimentacao-form',
     name: 'movimentacao-form',
