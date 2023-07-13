@@ -38,7 +38,7 @@
                         <span v-if="item.ativo" class="badge text-bg-success"> Ativo </span>
                         <span v-if="!item.ativo" class="badge text-bg-danger"> Inativo </span>
                     </td>
-                    <td class="text-start">{{ item.veiculo.placaCarro }}</td>
+                    <td class="text-start">{{ item.veiculo.placaCarro}}</td>
                     <td class="text-start">{{ item.condutor.nomeCondutor }}</td>
                     <td class="text-center">{{ item.entrada }}</td> <!--Formatar data-->
                     <!-- <td class="text-center">{{ item.saida }}</td> 

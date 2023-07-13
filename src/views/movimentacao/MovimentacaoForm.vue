@@ -118,7 +118,8 @@ export default defineComponent({
     methods: {
 
         onClickCadastrar() {
-           // this.veiculo.modelo = this.modelo
+            this.veiculo = this.veiculo
+            this.condutor = this.condutor
             
             MovimentacaoClient.cadastrar(this.movimentacao)
                 .then(sucess => {
